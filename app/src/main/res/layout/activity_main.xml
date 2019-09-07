@@ -13,18 +13,18 @@
         android:layout_height="wrap_content">
 
 
-        <com.example.testontouchevent.BViewGroup
+        <com.ontouch.demo2.BViewGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
 
-            <com.example.testontouchevent.CView
+            <com.ontouch.demo2.CView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
 
 
-        </com.example.testontouchevent.BViewGroup>
+        </com.ontouch.demo2.BViewGroup>
 
 
     </LinearLayout>

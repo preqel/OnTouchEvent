@@ -1,25 +1,27 @@
-package com.example.testct;
+package com.ontouch.demo1;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
-import com.example.testontouchevent.R;
+import com.ontouch.R;
+
 
 /**
  * Author: preqel
  * Created on: 2019-09-01.
  * Description:  滑动 冲突
  */
-public class SecondActivity extends AppCompatActivity {
-
+public class OneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-
+        setContentView(R.layout.activity_one);
+        ViewPager viewPager = findViewById(R.id.vp_main);
+        viewPager.setAdapter(new MyAdapter(this));
     }
 }
 

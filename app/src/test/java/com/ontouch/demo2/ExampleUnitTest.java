@@ -1,4 +1,4 @@
-package com.example.testontouchevent;
+package com.ontouch.demo2;
 
 import org.junit.Test;
 
