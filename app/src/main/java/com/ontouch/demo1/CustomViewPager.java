@@ -25,6 +25,10 @@ public class CustomViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+        if(ev.getAction() == MotionEvent.ACTION_DOWN){
+            super.onInterceptTouchEvent(ev);
+            return false;
+        }
         return true;
     }
 }
