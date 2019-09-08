@@ -6,10 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".demo1.OneActivity">
 
-    <androidx.viewpager.widget.ViewPager
+    <com.ontouch.demo1.CustomViewPager
         android:id="@+id/vp_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </FrameLayout>

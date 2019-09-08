@@ -18,11 +18,8 @@ import java.util.List;
  */
 public class MyListViewAdapter extends ArrayAdapter<String> {
 
-
     private List<String> datas;
     private int resourceId;
-
-
 
     public MyListViewAdapter(Context context, int resource, List<String> data) {
         super(context, resource);

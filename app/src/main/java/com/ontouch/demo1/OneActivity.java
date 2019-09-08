@@ -20,8 +20,8 @@ public class OneActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one);
-        ViewPager viewPager = findViewById(R.id.vp_main);
-        viewPager.setAdapter(new MyAdapter(this));
+        CustomViewPager viewPager = findViewById(R.id.vp_main);
+        viewPager.setAdapter(new MyPagerAdapter(this));
     }
 }
 

@@ -19,40 +19,43 @@ import java.util.List;
  * Created on: 2019-09-07.
  * Description:
  */
-public class MyAdapter extends PagerAdapter {
+public class MyPagerAdapter extends PagerAdapter {
 
     private Context mcontext;
     private List<String> datas;
 
-    public MyAdapter(Context mcontext) {
+    public MyPagerAdapter(Context mcontext) {
         this.mcontext = mcontext;
         datas = new ArrayList<>();
         datas.add("hello 1");
         datas.add("hello 2");
         datas.add("hello 3");
+        datas.add("hello 4");
+        datas.add("hello 5");
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return datas.size();
     }
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return false;
+        return view == object;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        ListView listView = (ListView) LayoutInflater.from(mcontext).inflate(R.layout.view_listview,
-                null);
-        listView.setAdapter(new MyListViewAdapter(mcontext, R.layout.item_listview_simple, datas));
-        return listView;
+        View view = LayoutInflater.from(mcontext).inflate(R.layout.view_listview,null);
+        ListView listView =  view.findViewById(R.id.lv_container);
+        container.addView(view);
+        listView.setAdapter(new MyListViewAdapter(mcontext,R.layout.item_listview_simple,datas));
+        return view;
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        super.destroyItem(container, position, object);
+        //super.destroyItem(container, position, object);
     }
 }
