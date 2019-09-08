@@ -27,26 +27,26 @@ public class CustomListView extends ListView {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         int x = (int) ev.getX();
         int y = (int) ev.getY();
-        switch (ev.getAction()){
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN: {
                 getParent().requestDisallowInterceptTouchEvent(true);
                 break;
             }
-                case MotionEvent.ACTION_MOVE:{
-                    int deltax = x - mLastX;
-                    int deltay = y - mLastY;
-                    if(Math.abs(deltax) > Math.abs(deltay) ){
-                        getParent().requestDisallowInterceptTouchEvent(false);
-                    }
-                    break;
-
+            case MotionEvent.ACTION_MOVE: {
+                int deltax = x - mLastX;
+                int deltay = y - mLastY;
+                if (Math.abs(deltax) > Math.abs(deltay)) {
+                    getParent().requestDisallowInterceptTouchEvent(false);
                 }
-
+                break;
+            }
             case MotionEvent.ACTION_UP:
                 break;
-
+            default:
+                break;
         }
-
+        mLastX = x;
+        mLastY = y;
         return super.dispatchTouchEvent(ev);
     }
 }

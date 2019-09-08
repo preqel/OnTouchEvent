@@ -25,10 +25,11 @@ public class CustomViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if(ev.getAction() == MotionEvent.ACTION_DOWN){
+        if(ev.getAction() == MotionEvent.ACTION_DOWN){  //内部拦截法需要加上这句代码，否则不起作用
             super.onInterceptTouchEvent(ev);
             return false;
         }
         return true;
+//        return false;
     }
 }
